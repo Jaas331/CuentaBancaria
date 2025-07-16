@@ -6,9 +6,9 @@ public class Main {
 
         Scanner entrada = new Scanner(System.in);
         CuentaBancaria cuenta = null;
-        var CuentaCreada = false;
         var salir = false;
 
+        //ciclo do-while
         do{
         System.out.print("""
                 *** Bienvenido a su Banco ***
@@ -21,11 +21,11 @@ public class Main {
                 Selecciona una opcion: """);
             var opcion = Integer.parseInt(entrada.nextLine());
 
+            //Ciclo switch con el argumento de la opción proporcionada por el usuario
             switch (opcion) {
                 case 1:
                     cuenta = new CuentaBancaria("", "");
                     cuenta.crearCuenta(entrada);
-                    CuentaCreada = true;
                     break;
                 case 2:
                     if (cuenta != null) {
@@ -57,12 +57,13 @@ public class Main {
             }
 
         System.out.println("Presione ENTER para continuar");
-        var continuar = entrada.nextLine();
+        entrada.nextLine();
         System.out.println();
 
 
-        } while(!salir);
+        } while(!salir);   
 
+        //Mensaje final y cierra el escanner
         System.out.println("""
                 Saliendo de la cuenta...
                 Hasta pronto.
